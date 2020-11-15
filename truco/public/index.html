@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Truco Arbiser - js-dos</title>
+  <script src="js-dos.js"></script>
+  <style>
+    body {
+      background-color: black;
+    }
+    canvas {
+      padding: 100px;
+      margin: auto;
+      display: block;
+      width: 640px;
+      height: 400px;
+    }
+    .copyright {
+      padding: 0;
+      margin: auto;
+      display: block;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="jsdos"></canvas>
+  <script>
+    Dos(document.getElementById("jsdos")).ready((fs, main) => {
+      fs.extract("truco.zip").then(() => {
+        main(["-c", "TRUCO.EXE"])
+      });
+    });
+  </script>
+  <div class="copyright">
+  <p>Truco Arbiser: <a href="https://www-2.dc.uba.ar/charlas/lud/truco/">https://www-2.dc.uba.ar/charlas/lud/truco/</a></p>
+  <p>js-dos: <a href="https://js-dos.com/">https://js-dos.com/</a></p>
+  <p>My Twitter: <a href="https://twitter.com/aioigzo">https://twitter.com/aioigzo</a></p>
+</div>
+</body>
+
+</html>
